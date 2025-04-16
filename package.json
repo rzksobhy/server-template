@@ -1,0 +1,34 @@
+{
+    "name": "server-template",
+    "version": "0.1.0",
+    "scripts": {
+        "prebuild": "npm run swagger-jsdoc",
+        "build": "tsup",
+        "start": "node dist/app.js",
+        "dev": "tsup --watch",
+        "migrate": "node-pg-migrate --config-file migration.config.js",
+        "pull-db": "kysely-codegen --out-file ./src/core/db.generated.d.ts",
+        "swagger-jsdoc": "swagger-jsdoc ./src/routes/*.ts --definition swaggerDefinition.js --output ./src/core/swaggerSpec.generated.json",
+        "format": "prettier . -w"
+    },
+    "dependencies": {
+        "compression": "^1.8.0",
+        "cors": "^2.8.5",
+        "express": "^5.1.0",
+        "morgan": "^1.10.0",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "@types/compression": "^1.7.5",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.1",
+        "@types/glob": "^8.1.0",
+        "@types/morgan": "^1.9.9",
+        "@types/node": "^22.14.1",
+        "glob": "^11.0.1",
+        "prettier": "^3.5.3",
+        "ts-node": "^10.9.2",
+        "tsup": "^8.4.0",
+        "typescript": "^5.8.3"
+    }
+}

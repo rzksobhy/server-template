@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "commonjs",
+        "rootDir": "./src",
+        "baseUrl": "./src",
+        "outDir": "./dist",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "paths": {
+            "@core/*": ["core/*"],
+            "@controllers/*": ["controllers/*"],
+            "@middlewares/*": ["middlewares/*"],
+            "@routes": ["routes/index.ts"],
+            "@routes/*": ["routes/*"],
+            "@schemas/*": ["schemas/*"],
+            "@services/*": ["services/*"],
+            "@utils/*": ["utils/*"],
+            "@typings/*": ["typings/*"]
+        }
+    },
+    "include": ["./src"],
+    "exclude": ["**/__tests/**/*_test.ts", "**/__tests/**/*_spec.ts", "*_test.ts", "*_spec.ts"]
+}
